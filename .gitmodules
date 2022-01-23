@@ -1,0 +1,3 @@
+[submodule "vAmigaCore"]
+	path = Emulator
+	url = https://github.com/dirkwhoffmann/vAmigaCore.git
