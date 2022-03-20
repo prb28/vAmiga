@@ -45,7 +45,7 @@ OSDebugger::read(u32 addr, string &result, isize limit) const
 
         auto c = (char)mem.spypeek8 <ACCESSOR_CPU> (addr);
         
-        if (c == 0 || c == '\r' || c == '\n') break;
+        if (c <= 0 || c == '\r' || c == '\n') break;
         if (isprint(c)) result += c;
     }
 }
@@ -481,7 +481,7 @@ OSDebugger::read(const os::Process &pr, os::SegList &result) const
         os::CommandLineInterface cli;
         read(BPTR(pr.pr_CLI), &cli);
         read(BPTR(cli.cli_Module), result);
-
+        
     } else if (isValidPtr(BPTR(pr.pr_SegList))) {
         
         auto size = mem.spypeek32 <ACCESSOR_CPU> (BPTR(pr.pr_SegList));

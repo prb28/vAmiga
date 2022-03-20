@@ -70,7 +70,10 @@ GdbServer::doReceive()
     
     // Remove LF and CR (if present)
     cmd = util::rtrim(cmd, "\n\r");
-
+    // Remove trailing '\0'
+    while (cmd[cmd.length()-1] <= 0) {
+        cmd.pop_back();
+    }
     if (config.verbose) {
         retroShell << "R: " << util::makePrintable(cmd) << "\n";
     }

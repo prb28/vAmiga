@@ -57,7 +57,9 @@ GdbServer::process <'q', GdbCmd::Offset> (string arg)
 template <> void
 GdbServer::process <'q', GdbCmd::TStatus> (string arg)
 {
-    reply("");
+    // TODO: get the real frame count
+    string tframe_count = util::hexstr <8> (0);
+    reply("T1;tstop::0;tframes:" + tframe_count + ";tcreated:" + tframe_count + ";tfree:ffffff;tsize:50*!;circular:1;disconn:1;starttime:;stoptime:;username:;notes::");
 }
 
 template <> void
@@ -122,13 +124,19 @@ GdbServer::process <'v', GdbCmd::Cont> (string arg)
 
         amiga.run();
         return;
-    }
-    if (arg == "s") {
+    } else if (arg == "s") {
         
         amiga.stepInto();
         return;
+    } else if (arg == "r") {
+        
+        amiga.stepOver();
+        return;
+    } else if (arg == "t") {
+        
+        amiga.pause();
+        return;
     }
-    
     throw VAError(ERROR_GDB_INVALID_FORMAT);
 }
 
@@ -142,20 +150,32 @@ GdbServer::process <'v'> (string cmd)
         process <'v', GdbCmd::MustReplyEmpty> ("");
         return;
     }
-    if (command == "Cont?") {
+    if (command.starts_with("Cont?")) {
     
         process <'v', GdbCmd::ContQ> ("");
         return;
     }
-    if (command == "Cont;c") {
+    if (command.starts_with("Cont;c")) {
 
         process <'v', GdbCmd::Cont> ("c");
         return;
     }
 
-    if (command == "Cont;s") {
+    if (command.starts_with("Cont;s")) {
 
         process <'v', GdbCmd::Cont> ("s");
+        return;
+    }
+
+    if (command.starts_with("Cont;r")) {
+
+        process <'v', GdbCmd::Cont> ("r");
+        return;
+    }
+
+    if (command.starts_with("Cont;t")) {
+
+        process <'v', GdbCmd::Cont> ("t");
         return;
     }
 
@@ -227,9 +247,11 @@ GdbServer::process <'Q'> (string cmd)
     auto tokens = util::split(cmd, ':');
                
      if (tokens[0] == "StartNoAckMode") {
-
          process <'Q', GdbCmd::StartNoAckMode> ("");
          return;
+     } else if (tokens[0] == "TFrame") {
+        reply("OK");
+        return;
      }
     
     throw VAError(ERROR_GDB_UNSUPPORTED_CMD, "Q");
@@ -361,7 +383,7 @@ GdbServer::process <'Z'> (string cmd)
 {
     auto tokens = util::split(cmd, ',');
     
-    if (tokens.size() == 3) {
+    if (tokens.size() > 1) {
 
         auto type = std::stol(tokens[0]);
         auto addr = std::stol(tokens[1], 0, 16);
@@ -385,12 +407,14 @@ GdbServer::process <'z'> (string cmd)
 {
     auto tokens = util::split(cmd, ',');
     
-    if (tokens.size() == 3) {
+    if (tokens.size() > 1) {
 
         auto type = std::stol(tokens[0]);
         auto addr = std::stol(tokens[1], 0, 16);
-        // auto kind = std::stol(tokens[2]);
-                
+        //auto kind = std::stol(tokens[2]);
+        
+        printf("z: type = %ld addr = $%lx\n", type, addr);
+        
         if (type == 0) {
          
             cpu.debugger.breakpoints.removeAt((u32)addr);
