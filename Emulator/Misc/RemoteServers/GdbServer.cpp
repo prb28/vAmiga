@@ -17,6 +17,7 @@
 #include "MsgQueue.h"
 #include "OSDebugger.h"
 #include "RetroShell.h"
+#include "Copper.h"
 
 GdbServer::GdbServer(Amiga& ref) : RemoteServer(ref)
 {
@@ -223,16 +224,16 @@ GdbServer::verifyChecksum(const string &s, const string &chk)
 string
 GdbServer::readRegister(isize nr)
 {
-    if (nr >= 0 && nr <= 7) {
+    if (nr >= D0 && nr <= D7) {
         return util::hexstr <8> ((u32)cpu.getD((int)(nr)));
     }
-    if (nr >= 8 && nr <= 15) {
+    if (nr >= A0 && nr <= A7) {
         return util::hexstr <8> ((u32)cpu.getA((int)(nr - 8)));
     }
-    if (nr == 16) {
+    if (nr == SR) {
         return util::hexstr <8> ((u32)cpu.getSR());
     }
-    if (nr == 17) {
+    if (nr == PC) {
         return util::hexstr <8> ((u32)cpu.getPC());
     }
 
@@ -251,4 +252,22 @@ GdbServer::breakpointReached()
 {
     debug(GDB_DEBUG, "breakpointReached()\n");
     process <'?'> ("");
+}
+
+int
+GdbServer::getCurrentTraceFrame()
+{
+    return currentTraceFrame;
+}
+
+void
+GdbServer::setCurrentTraceFrame(int traceFrame)
+{
+    currentTraceFrame = traceFrame;
+}
+
+string
+GdbServer::getCopperCurrentAddress()
+{
+    return util::hexstr <8> (copper.getCopPC0());
 }

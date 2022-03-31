@@ -17,6 +17,7 @@
 #include "MsgQueue.h"
 #include "RetroShell.h"
 
+
 template <> void
 GdbServer::process <' ', GdbCmd::CtrlC> (string arg)
 {
@@ -77,7 +78,8 @@ GdbServer::process <'q', GdbCmd::TfP> (string arg)
 template <> void
 GdbServer::process <'q', GdbCmd::fThreadInfo> (string arg)
 {
-    reply("m1");
+    //2 threads: 1=THREAD_ID_CPU / 2=THREAD_ID_COPPER
+    reply("m01,02");
 }
 
 template <> void
@@ -280,7 +282,30 @@ GdbServer::process <'n'> (string cmd)
 template <> void
 GdbServer::process <'H'> (string cmd)
 {
-    reply("OK");
+    if (cmd.starts_with("g")) {
+        // getting registers for thread
+        string result;
+        isize threadId;
+        util::parseHex(cmd.substr(1), &threadId);
+        if ((getCurrentTraceFrame() < 0) || (threadId == THREAD_ID_COPPER)){
+            for (int reg = 0; reg < 18; reg++) {
+                if (threadId == THREAD_ID_COPPER && reg == PC)
+                {
+                    // Copper PC
+                    result += getCopperCurrentAddress();
+                }
+                else
+                {
+                    result += readRegister(reg);
+                }
+            }
+            reply(result);
+        } else {
+            reply("OK");
+        }
+    } else {
+        reply("OK");
+    }
 }
 
 template <> void

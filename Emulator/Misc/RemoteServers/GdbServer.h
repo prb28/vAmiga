@@ -31,7 +31,21 @@ enum class GdbCmd
     fThreadInfo,
 };
 
+enum regnames {
+    D0, D1, D2, D3, D4, D5, D6, D7,
+    A0, A1, A2, A3, A4, A5, A6, A7,
+    SR, PC
+};
+
 class GdbServer : public RemoteServer {
+    // Traceframe default index
+    static const int DEFAULT_TRACEFRAME = -1; 
+
+    // Id for the cpu thread
+    static const int THREAD_ID_CPU      =  1; 
+
+    // Id for the copper thread
+    static const int THREAD_ID_COPPER   =  2; 
 
     // The name of the process to be debugged
     string processName;
@@ -45,7 +59,9 @@ class GdbServer : public RemoteServer {
     // Indicates whether received packets should be acknowledged
     bool ackMode = true;
 
-    
+    // The current trace frame index
+    int currentTraceFrame = DEFAULT_TRACEFRAME;
+
     //
     // Initializing
     //
@@ -133,6 +149,12 @@ private:
     void reply(const string &payload);
 
     
+    // Gets the current trace frame index
+    int getCurrentTraceFrame();
+    
+    // Sets the current trace frame index
+    void setCurrentTraceFrame(int traceFrame);
+    
     //
     // Reading the emulator state
     //
@@ -142,8 +164,10 @@ private:
 
     // Reads a byte from memory
     string readMemory(isize addr);
-    
-    
+
+    // Returns the current copper address
+    string getCopperCurrentAddress();
+
     //
     // Delegation methods
     //
