@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -102,6 +102,7 @@
 		507957AC244AD25B007B8B8D /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507957AB244AD25B007B8B8D /* Configuration.swift */; };
 		507C9C4626076EF7006779B5 /* RessourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507C9C4526076EF7006779B5 /* RessourceManager.swift */; };
 		507D7769228BE3EF001E97A9 /* StateMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 507D7767228BE3EF001E97A9 /* StateMachine.cpp */; };
+		50826F7827F0B2AD005FBF3B /* DiagBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50826F7627F0B2AD005FBF3B /* DiagBoard.cpp */; };
 		5085FE5921FB6856009753EF /* ProxyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085FE5821FB6856009753EF /* ProxyExtensions.swift */; };
 		508833EE21F0D21B009890EA /* ADFFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 508833EC21F0D21B009890EA /* ADFFile.cpp */; };
 		50894D822593CF4400C0499D /* HIDExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50894D812593CF4400C0499D /* HIDExtensions.swift */; };
@@ -210,7 +211,6 @@
 		50B2BC8925EC3D590032EEFE /* IOUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50C0B78025EC367000CDE1F2 /* IOUtils.cpp */; };
 		50B35B6222B2382E001A9C17 /* SerialPort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50B35B6022B2382E001A9C17 /* SerialPort.cpp */; };
 		50B36395277760320030A50C /* BlitterPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B36394277760320030A50C /* BlitterPanel.swift */; };
-		50B3E62327E0CB3E00E4C3ED /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 50B3E62227E0CB3E00E4C3ED /* Sparkle */; };
 		50B70CAD252CE0BF006B5191 /* Muxer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50B70CAB252CE0BF006B5191 /* Muxer.cpp */; };
 		50B81E0824E6BCCA004384C9 /* DiskControllerRegs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50B81E0724E6BCCA004384C9 /* DiskControllerRegs.cpp */; };
 		50B81E0A24E6BEA5004384C9 /* CIARegs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50B81E0924E6BEA5004384C9 /* CIARegs.cpp */; };
@@ -227,6 +227,8 @@
 		50C8C44F260740AC00F4E012 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8C44E260740AC00F4E012 /* SplashScreen.swift */; };
 		50C8C452260747EA00F4E012 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8C451260747EA00F4E012 /* Canvas.swift */; };
 		50C8C4552607524400F4E012 /* Monitors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C8C4542607524400F4E012 /* Monitors.swift */; };
+		50CC209727ECCD6D00AEA010 /* OSDescriptors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50CC209527ECCD6D00AEA010 /* OSDescriptors.cpp */; };
+		50CC209827ECCD6D00AEA010 /* OSDescriptors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50CC209527ECCD6D00AEA010 /* OSDescriptors.cpp */; };
 		50D263CC21F6377700FA167F /* A500ANSI.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D263CB21F6377600FA167F /* A500ANSI.xib */; };
 		50D263CE21F6378100FA167F /* A1000ISO.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D263CD21F6378000FA167F /* A1000ISO.xib */; };
 		50D2B85226D292B7008040E5 /* DeniseDebugger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50D2B85026D292B7008040E5 /* DeniseDebugger.cpp */; };
@@ -602,6 +604,9 @@
 		507C9C4526076EF7006779B5 /* RessourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RessourceManager.swift; sourceTree = "<group>"; };
 		507D7767228BE3EF001E97A9 /* StateMachine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StateMachine.cpp; sourceTree = "<group>"; };
 		507D7768228BE3EF001E97A9 /* StateMachine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StateMachine.h; sourceTree = "<group>"; };
+		50826F7627F0B2AD005FBF3B /* DiagBoard.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DiagBoard.cpp; sourceTree = "<group>"; };
+		50826F7727F0B2AD005FBF3B /* DiagBoard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiagBoard.h; sourceTree = "<group>"; };
+		50826F7927F0B2C5005FBF3B /* DiagBoardRom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiagBoardRom.h; sourceTree = "<group>"; };
 		5082D83A21EF891200CF7692 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		5083CF572546A22E00A28EF8 /* FSTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSTypes.h; sourceTree = "<group>"; };
 		5085FE5821FB6856009753EF /* ProxyExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyExtensions.swift; sourceTree = "<group>"; };
@@ -791,6 +796,8 @@
 		50C8C451260747EA00F4E012 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		50C8C4542607524400F4E012 /* Monitors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monitors.swift; sourceTree = "<group>"; };
 		50CA602E260E02B700C4A22C /* Reflection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reflection.h; sourceTree = "<group>"; };
+		50CC209527ECCD6D00AEA010 /* OSDescriptors.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OSDescriptors.cpp; sourceTree = "<group>"; };
+		50CC209627ECCD6D00AEA010 /* OSDescriptors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSDescriptors.h; sourceTree = "<group>"; };
 		50CF461C2620420500BB3B95 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		50CF461F2620423300BB3B95 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		50CF46222620427600BB3B95 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
@@ -832,6 +839,7 @@
 		50DED6B02202EC3100B8195F /* Inspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspector.swift; sourceTree = "<group>"; };
 		50DF2C9E2268CFC000795256 /* AgnusTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgnusTypes.h; sourceTree = "<group>"; };
 		50DF2C9F2269135800795256 /* SpriteTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteTableView.swift; sourceTree = "<group>"; };
+		50DFA84027F350680009C216 /* DiagBoardTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiagBoardTypes.h; sourceTree = "<group>"; };
 		50E19058277F695C00B8DBE2 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		50E1905A277F69B300B8DBE2 /* FFmpeg.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FFmpeg.cpp; sourceTree = "<group>"; };
 		50E1905B277F69B300B8DBE2 /* FFmpeg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFmpeg.h; sourceTree = "<group>"; };
@@ -942,7 +950,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50B3E62327E0CB3E00E4C3ED /* Sparkle in Frameworks */,
 				508FDFE921EA21C80043D0E9 /* AppKit.framework in Frameworks */,
 				508FDFE721EA21780043D0E9 /* CoreAudio.framework in Frameworks */,
 				508FDFE521EA21630043D0E9 /* IOKit.framework in Frameworks */,
@@ -1150,6 +1157,10 @@
 				502C135027C613DB009534BD /* HdControllerRom.h */,
 				508AC36827B7F6FC006AD2E7 /* HdController.h */,
 				508AC36727B7F6FC006AD2E7 /* HdController.cpp */,
+				50DFA84027F350680009C216 /* DiagBoardTypes.h */,
+				50826F7927F0B2C5005FBF3B /* DiagBoardRom.h */,
+				50826F7727F0B2AD005FBF3B /* DiagBoard.h */,
+				50826F7627F0B2AD005FBF3B /* DiagBoard.cpp */,
 			);
 			path = Zorro;
 			sourceTree = "<group>";
@@ -1503,6 +1514,8 @@
 			children = (
 				50AD90562770CF5D0011ECCB /* CMakeLists.txt */,
 				501FB313275E461B00D0A57B /* OSDebuggerTypes.h */,
+				50CC209627ECCD6D00AEA010 /* OSDescriptors.h */,
+				50CC209527ECCD6D00AEA010 /* OSDescriptors.cpp */,
 				501FB311275E460100D0A57B /* OSDebugger.h */,
 				501FB310275E460100D0A57B /* OSDebugger.cpp */,
 				501FB3162762008C00D0A57B /* OSDebuggerRead.cpp */,
@@ -1899,7 +1912,6 @@
 			);
 			name = vAmiga;
 			packageProductDependencies = (
-				50B3E62227E0CB3E00E4C3ED /* Sparkle */,
 			);
 			productName = vAmiga;
 			productReference = 508FDE6421EA1FA40043D0E9 /* vAmiga.app */;
@@ -1929,7 +1941,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = "Dirk Hoffmann";
 				TargetAttributes = {
 					508FDE6321EA1FA40043D0E9 = {
@@ -1951,7 +1963,6 @@
 			);
 			mainGroup = 508FDE5B21EA1FA40043D0E9;
 			packageReferences = (
-				50B3E62127E0CB3E00E4C3ED /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = 508FDE6521EA1FA40043D0E9 /* Products */;
 			projectDirPath = "";
@@ -2035,6 +2046,7 @@
 			files = (
 				508FDFD821EA20510043D0E9 /* Shaders.metal in Sources */,
 				50D7CDC42286E968002689F0 /* Joystick.cpp in Sources */,
+				50CC209727ECCD6D00AEA010 /* OSDescriptors.cpp in Sources */,
 				506ACE44279AC75100BA7877 /* SequencerDas.cpp in Sources */,
 				501C514A27C38FE500DF1DD5 /* DragImageView.swift in Sources */,
 				509C365E260B177E004F160A /* Interpreter.cpp in Sources */,
@@ -2189,6 +2201,7 @@
 				50FC08AD27819CD100F0C567 /* AgnusInfo.cpp in Sources */,
 				50AE6F8525D71FBE0004AFBC /* Error.cpp in Sources */,
 				5057E4C5243DF10A004005EB /* Primitives.swift in Sources */,
+				50826F7827F0B2AD005FBF3B /* DiagBoard.cpp in Sources */,
 				507957AC244AD25B007B8B8D /* Configuration.swift in Sources */,
 				50F54B3024B5D31D0078FDC9 /* u_quick.c in Sources */,
 				50DD33CC2756113300AE18B4 /* pfile.c in Sources */,
@@ -2340,6 +2353,7 @@
 				50FC04B627DA19A900C3E566 /* RamExpansion.cpp in Sources */,
 				50FC04A327DA197A00C3E566 /* SequencerRegs.cpp in Sources */,
 				50FC04B227DA199C00C3E566 /* ControlPort.cpp in Sources */,
+				50CC209827ECCD6D00AEA010 /* OSDescriptors.cpp in Sources */,
 				50FC04FE27DA1AAB00C3E566 /* UART.cpp in Sources */,
 				50FC048E27DA195D00C3E566 /* PaulaRegs.cpp in Sources */,
 				50FC048527DA190400C3E566 /* Error.cpp in Sources */,
@@ -2487,9 +2501,11 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2576,9 +2592,11 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
@@ -2623,6 +2641,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3NG65ZLYW7;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_ENABLE_BUILTIN_FUNCTIONS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -2657,6 +2677,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3NG65ZLYW7;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_ENABLE_BUILTIN_FUNCTIONS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -2736,25 +2758,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		50B3E62127E0CB3E00E4C3ED /* XCRemoteSwiftPackageReference "Sparkle" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sparkle-project/Sparkle";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		50B3E62227E0CB3E00E4C3ED /* Sparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 50B3E62127E0CB3E00E4C3ED /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 508FDE5C21EA1FA40043D0E9 /* Project object */;
 }

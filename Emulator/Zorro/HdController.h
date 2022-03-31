@@ -44,7 +44,7 @@ public:
 private:
     
     const char *getDescription() const override;
-    void _dump(dump::Category category, std::ostream& os) const override;
+    void _dump(Category category, std::ostream& os) const override;
 
     
     //
@@ -58,7 +58,7 @@ private:
     template <class T>
     void applyToPersistentItems(T& worker)
     {
-        // worker << rom;
+
     }
 
     template <class T>
@@ -94,7 +94,7 @@ public:
     virtual u16 manufacturer() const override    { return 0x0539; }
     virtual u32 serialNumber() const override    { return 3141592 + u32(nr); }
     virtual u16 initDiagVec() const override     { return 0x40; }
-    virtual string vendorName() const override   { return "MRAS"; }
+    virtual string vendorName() const override   { return "RASTEC"; }
     virtual string productName() const override  { return "HD controller"; }
     virtual string revisionName() const override { return "0.3"; }
 

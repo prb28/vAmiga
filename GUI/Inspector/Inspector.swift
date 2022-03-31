@@ -250,6 +250,8 @@ class Inspector: DialogController {
     @IBOutlet weak var copPC: NSTextField!
     @IBOutlet weak var copCDANG: NSButton!
 
+    @IBOutlet weak var copBreakView: CopperBreakTableView!
+
     // Blitter panel
     @IBOutlet weak var bltBLTCON0a: NSTextField!
     @IBOutlet weak var bltBLTCON0b: NSTextField!
@@ -703,18 +705,41 @@ class Inspector: DialogController {
     
     func signalBreakPoint(pc: Int) {
             
-        message.stringValue = String(format: "Breakpoint reached")
+        message.stringValue = "Breakpoint reached"
         cpuInstrView.breakpointPC = pc
         scrollToPC()
     }
 
     func signalWatchPoint(pc: Int) {
     
-        message.stringValue = String(format: "Watchpoint reached")
+        message.stringValue = "Watchpoint reached"
         cpuInstrView.watchpointPC = pc
         scrollToPC()
     }
+
+    func signalCatchPoint(vector: Int) {
     
+        let name = amiga.cpu.vectorName(vector)!
+        message.stringValue = "Catched exception vector \(vector) (\(name))"
+        scrollToPC()
+    }
+
+    func signalSoftwareTrap() {
+    
+        message.stringValue = "Software trap reached"
+        scrollToPC()
+    }
+
+    func signalCopperBreakpoint() {
+    
+        message.stringValue = "Copper breakpoint reached"
+    }
+
+    func signalCopperWatchpoint() {
+    
+        message.stringValue = "Copper watchpoint reached"
+    }
+
     @IBAction func refreshAction(_ sender: Any!) {
         
         fullRefresh()

@@ -210,7 +210,9 @@ extension MyController {
             
             // Open the Rom dialog after a small delay
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                
                 self.openConfigurator(tab: "Roms")
+                self.configurator!.installAros()
             }
         }
         
@@ -453,16 +455,28 @@ extension MyController {
         case .DMA_DEBUG_OFF:
             renderer.zoomTextureIn()
             
-        case .BREAKPOINT_CONFIG:
+        case .BREAKPOINT_UPDATED, .WATCHPOINT_UPDATED, .CATCHPOINT_UPDATED,
+                .COPPERBP_UPDATED, .COPPERWP_UPDATED:
             inspector?.fullRefresh()
-            inspector?.scrollToPC()
             
         case .BREAKPOINT_REACHED:
             inspector?.signalBreakPoint(pc: Int(msg.data1))
             
         case .WATCHPOINT_REACHED:
             inspector?.signalWatchPoint(pc: Int(msg.data1))
-            
+
+        case .CATCHPOINT_REACHED:
+            inspector?.signalCatchPoint(vector: Int(msg.data1))
+
+        case .SWTRAP_REACHED:
+            inspector?.signalSoftwareTrap()
+
+        case .COPPERBP_REACHED:
+            inspector?.signalCopperBreakpoint()
+
+        case .COPPERWP_REACHED:
+            inspector?.signalCopperWatchpoint()
+
         case .CPU_HALT:
             refreshStatusBar()
             

@@ -26,7 +26,7 @@
 #define SNP_BETA 1
 
 // Uncomment this setting in a release build
-#define RELEASEBUILD
+// #define RELEASEBUILD
 
 //
 // Build settings
@@ -94,6 +94,8 @@ struct FloatStereo; typedef struct FloatStereo SampleType;
 
 static const int NO_SEQ_FASTPATH = 0; // Disable sequencer speed optimizations
 static const int LEGACY_COPPER   = 0; // Enable deprecated Copper code
+static const int DIAG_BOARD      = 1; // Plug in the diagnose board
+
 
 //
 // Debug settings
@@ -113,6 +115,7 @@ static const int SNP_DEBUG       = 0; // Serialization (snapshots)
 
 // CPU
 static const int CPU_DEBUG       = 0; // CPU
+static const int CST_DEBUG       = 0; // Call stack recording
 
 // Memory access
 static const int OCSREG_DEBUG    = 0; // General OCS register debugging

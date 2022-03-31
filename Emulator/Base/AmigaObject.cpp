@@ -21,25 +21,13 @@ AmigaObject::prefix() const
 }
 
 void
-AmigaObject::dump(dump::Category category, std::ostream& ss) const
+AmigaObject::dump(Category category, std::ostream& ss) const
 {
     _dump(category, ss);
 }
 
 void
-AmigaObject::dump(dump::Category category) const
+AmigaObject::dump(Category category) const
 {
     dump(category, std::cout);
-}
-
-void
-AmigaObject::dump(std::ostream& ss) const
-{
-    dump((dump::Category)(-1), ss);
-}
-
-void
-AmigaObject::dump() const
-{
-    dump((dump::Category)(-1));
 }
